@@ -75,24 +75,24 @@ services:
     image: rmecha/sora-baseline-client-attendance:main
     restart: always
     volumes:
-      - ./nginx/attendance/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx/attendance.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       web:
         condition: service_started
     ports:
-      - 127.0.0.1:5050:80
+      - 127.0.0.1:8080:80
 
   chooser:
     container_name: sora_vote_chooser
     image: rmecha/sora-baseline-client-chooser:main
     restart: always
     volumes:
-      - ./nginx/chooser/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx/chooser.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       web:
         condition: service_started
     ports:
-      - 127.0.0.1:5060:80
+      - 127.0.0.1:8081:80
 
 volumes:
   db:
