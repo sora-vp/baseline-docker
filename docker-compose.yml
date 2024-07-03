@@ -77,6 +77,8 @@ services:
     depends_on:
       web:
         condition: service_started
+    ports:
+      - 127.0.0.1:5050:80
 
   chooser:
     container_name: sora_vote_chooser
@@ -85,6 +87,8 @@ services:
     depends_on:
       web:
         condition: service_started
+    ports:
+      - 127.0.0.1:5060:80
 
 volumes:
   db:
