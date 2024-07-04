@@ -68,7 +68,7 @@ services:
       DB_PASSWORD: $DATABASE_PASSWORD
       AUTH_SECRET: $AUTH_SECRET
       AMQP_URL: amqp://queue
-      PROCESSOR_API_URL: http://web/api/trpc
+      PROCESSOR_API_URL: http://web:3000/api/trpc
 
   attendance:
     container_name: sora_vote_attendance
@@ -80,7 +80,7 @@ services:
       web:
         condition: service_started
     ports:
-      - 127.0.0.1:8080:80
+      - 127.0.0.1:8080:8080
 
   chooser:
     container_name: sora_vote_chooser
@@ -92,7 +92,7 @@ services:
       web:
         condition: service_started
     ports:
-      - 127.0.0.1:8081:80
+      - 127.0.0.1:8081:8081
 
 volumes:
   db:
