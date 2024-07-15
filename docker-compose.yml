@@ -78,6 +78,8 @@ services:
     container_name: sora_vote_processor
     image: rmecha/sora-baseline-processor:main
     restart: always
+    volumes:
+      - processor_log:/vote-processor/processor.log
     depends_on:
       web:
         condition: service_started
@@ -120,3 +122,4 @@ volumes:
   queue_data:
   queue_log:
   db-backup:
+  processor_log:
