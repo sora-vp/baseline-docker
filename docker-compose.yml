@@ -55,7 +55,7 @@ services:
 
   web:
     container_name: sora_web
-    image: rmecha/sora-baseline-web:v3.0.0
+    image: rmecha/sora-baseline-web:v3.0.1
     restart: always
     depends_on:
       database:
