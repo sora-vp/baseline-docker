@@ -79,7 +79,7 @@ services:
     image: rmecha/sora-baseline-processor:v3.0.0
     restart: always
     volumes:
-      - processor_log:/vote-processor/logs/processor.log
+      - processor_log:/vote-processor/logs
     depends_on:
       web:
         condition: service_started
