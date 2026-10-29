@@ -37,7 +37,7 @@ services:
       database:
         condition: service_healthy
     volumes:
-      - db-backup:/mnt/data
+      - ./backups:/mnt/data
 
   queue:
     image: rabbitmq:3.13.3-alpine
